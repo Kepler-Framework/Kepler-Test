@@ -6,8 +6,11 @@
 <br></br>
 * 测试原理
 	* <img src="https://raw.githubusercontent.com/Kepler-Framework/Kepler-Images/master/test_client.png" width="90%"/>  
-	* 通过解析JSON构建请求参数，并将返回结果序列化为JSON
+	* 通过解析`JSON`构建请求参数，并将返回结果序列化为`JSON`
 <br></br>
+* 如何安装
+	* git clone https://github.com/Kepler-Framework/Kepler-Test
+	* 
 * 如何使用
 	* 增加Kepler-test-client中需要测试的@See[<a href="https://github.com/Kepler-Framework/Kepler-Test/blob/master/modules/client/pom.xml">接口依赖(Dependency)</a>]
 	```
@@ -17,7 +20,7 @@
 		<version>1.0-SNAPSHOT</version>
 	</dependency>
 	```
-	* 编写测试用例中@See[<a href="https://github.com/Kepler-Framework/Kepler-Test/blob/master/modules/client/case/3/case.json">元数据部分</a>]
+	* 编写测试用例中@See[<a href="https://github.com/Kepler-Framework/Kepler-Test/blob/master/modules/client/case/3/case.json">请求服务部分</a>]
 	```
 	{
 		"service": "com.kepler.TestApp",
