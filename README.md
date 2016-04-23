@@ -12,7 +12,7 @@
 	* git clone https://github.com/Kepler-Framework/Kepler-Test
 	* mvn clean install -DskipTests
 		* kepler-test：`测试框架`
-		* kepler-test-dem：`内置示例`
+		* kepler-test-demo：`内置示例`
 <br></br>
 * 如何使用
 	* 增加Kepler-test-client中需要测试的@See[<a href="https://github.com/Kepler-Framework/Kepler-Test/blob/master/modules/client/pom.xml">接口依赖(Dependency)</a>]
