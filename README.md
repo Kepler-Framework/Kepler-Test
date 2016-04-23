@@ -6,11 +6,13 @@
 <br></br>
 * 测试原理
 	* <img src="https://raw.githubusercontent.com/Kepler-Framework/Kepler-Images/master/test_client.png" width="90%"/>  
-	* 通过解析`JSON`构建请求参数，并将返回结果序列化为`JSON`
+	* 通过解析`JSON`构建请求参数，并将响应输出为`JSON`
 <br></br>
 * 如何安装
 	* git clone https://github.com/Kepler-Framework/Kepler-Test
-	* 
+	* mvn clean install -DskipTests
+		* kepler-test：`测试框架`
+		* kepler-test-dem：`内置示例`
 * 如何使用
 	* 增加Kepler-test-client中需要测试的@See[<a href="https://github.com/Kepler-Framework/Kepler-Test/blob/master/modules/client/pom.xml">接口依赖(Dependency)</a>]
 	```
