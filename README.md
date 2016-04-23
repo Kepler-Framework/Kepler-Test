@@ -64,10 +64,10 @@
 	* 内置测试
 	`需启动kepler-test-demo/service`
 		* mvn clean test -Dcom.kepler.test.maintest.path=[...]/modules/client/case/1/case
-			* @See[<a href="https://github.com/Kepler-Framework/Kepler-Test/blob/master/modules/client/case/1/case.json"]Case1</a>]
+			* @See[<a href="https://github.com/Kepler-Framework/Kepler-Test/blob/master/modules/client/case/1/case.json">Case1</a>]
 		* mvn clean test -Dcom.kepler.test.maintest.path=[...]/modules/client/case/2/case
-			* @See[<a href="https://github.com/Kepler-Framework/Kepler-Test/blob/master/modules/client/case/2/case.json"]Case2</a>]
+			* @See[<a href="https://github.com/Kepler-Framework/Kepler-Test/blob/master/modules/client/case/2/case.json">Case2</a>]
 		* mvn clean test -Dcom.kepler.test.maintest.path=[...]/modules/client/case/3/case
-			* @See[<a href="https://github.com/Kepler-Framework/Kepler-Test/blob/master/modules/client/case/3/case.json"]Case3</a>]
+			* @See[<a href="https://github.com/Kepler-Framework/Kepler-Test/blob/master/modules/client/case/3/case.json">Case3</a>]
 		* mvn clean test -Dcom.kepler.test.maintest.path=[...]/modules/client/case/4/case
-			* @See[<a href="https://github.com/Kepler-Framework/Kepler-Test/blob/master/modules/client/case/4/case.json"]Case4</a>]
+			* @See[<a href="https://github.com/Kepler-Framework/Kepler-Test/blob/master/modules/client/case/4/case.json">Case4</a>]
