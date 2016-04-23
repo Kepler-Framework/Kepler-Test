@@ -34,3 +34,20 @@
 		]
 	}
 	```
+	* 编写测试用例中@See[<a href="https://github.com/Kepler-Framework/Kepler-Test/blob/master/modules/client/case/3/case-apply.json">请求参数部分</a>]
+	```
+	{
+		"desc": "THIS TEST",
+		"dept": 
+		{
+			"name": "dept",
+			"createAt": "2016-04-23 01:02:03"
+		},
+	
+		"user": 
+		{
+			"name": "kim",
+			"level": "0"
+		}
+	}
+	```
