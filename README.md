@@ -17,4 +17,20 @@
 		<version>1.0-SNAPSHOT</version>
 	</dependency>
 	```
-	* 
+	* 编写测试用例中@See[<a href="https://github.com/Kepler-Framework/Kepler-Test/blob/master/modules/client/case/3/case.json">元数据部分</a>]
+	```
+	{
+		"service": "com.kepler.TestApp",
+		"version": "0.0.1-test",
+		"method": "test",
+		"profile": "",
+		"catalog": "",
+		"args": 
+		[
+			{
+				"name": "apply",
+				"clazz": "com.kepler.Apply"
+			}
+		]
+	}
+	```
