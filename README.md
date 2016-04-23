@@ -58,6 +58,16 @@
 	}
 	```
 	* 执行测试
-		* cd Kepler-test/modules/client
+		* cd kepler-test/modules/client
 		* mvn clean test -Dcom.kepler.test.maintest.path=[...]/modules/client/case/3/case
-			* 执行case.json对应测试
+			* 执行case.json对应测试`([...]需要替换为实际路径)`
+	* 内置测试
+	`需启动kepler-test-demo/service`
+		* mvn clean test -Dcom.kepler.test.maintest.path=[...]/modules/client/case/1/case
+			* @See[<a href="https://github.com/Kepler-Framework/Kepler-Test/blob/master/modules/client/case/1/case.json"]Case1</a>]
+		* mvn clean test -Dcom.kepler.test.maintest.path=[...]/modules/client/case/2/case
+			* @See[<a href="https://github.com/Kepler-Framework/Kepler-Test/blob/master/modules/client/case/2/case.json"]Case2</a>]
+		* mvn clean test -Dcom.kepler.test.maintest.path=[...]/modules/client/case/3/case
+			* @See[<a href="https://github.com/Kepler-Framework/Kepler-Test/blob/master/modules/client/case/3/case.json"]Case3</a>]
+		* mvn clean test -Dcom.kepler.test.maintest.path=[...]/modules/client/case/4/case
+			* @See[<a href="https://github.com/Kepler-Framework/Kepler-Test/blob/master/modules/client/case/4/case.json"]Case4</a>]
