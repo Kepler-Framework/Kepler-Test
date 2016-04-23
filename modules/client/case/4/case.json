@@ -1,0 +1,19 @@
+{
+	"service": "com.kepler.TestApp",
+	"version": "0.0.1-test",
+	"method": "test",
+	"profile": "",
+	"catalog": "",
+	"args": 
+	[
+		{
+			"name": "user",
+			"clazz": "com.kepler.User"
+		},
+
+		{
+			"name": "dept",
+			"clazz": "com.kepler.Dept"
+		}
+	]
+}

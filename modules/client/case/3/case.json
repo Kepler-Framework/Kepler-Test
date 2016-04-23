@@ -1,0 +1,14 @@
+{
+	"service": "com.kepler.TestApp",
+	"version": "0.0.1-test",
+	"method": "test",
+	"profile": "",
+	"catalog": "",
+	"args": 
+	[
+		{
+			"name": "apply",
+			"clazz": "com.kepler.Apply"
+		}
+	]
+}

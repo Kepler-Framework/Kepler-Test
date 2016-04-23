@@ -1,0 +1,14 @@
+{
+	"desc": "THIS TEST",
+	"dept": 
+	{
+		"name": "dept",
+		"createAt": "2016-04-23 01:02:03"
+	},
+
+	"user": 
+	{
+		"name": "kim",
+		"level": "0"
+	}
+}
