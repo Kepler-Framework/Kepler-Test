@@ -46,9 +46,9 @@ public class MainTest {
 
 	private static final String DATE_FORAMT = PropertiesUtils.get(MainTest.class.getName().toLowerCase() + ".date_foramt", "yyyy-MM-dd HH:mm:ss");
 
-	private static final String IN_STUFFIX = PropertiesUtils.get(MainTest.class.getName().toLowerCase() + ".stuffix", ".json");
+	private static final String IN_STUFFIX = PropertiesUtils.get(MainTest.class.getName().toLowerCase() + ".stuffix_in", ".json");
 
-	private static final String OUT_STUFFIX = PropertiesUtils.get(MainTest.class.getName().toLowerCase() + ".stuffix", "-out.json");
+	private static final String OUT_STUFFIX = PropertiesUtils.get(MainTest.class.getName().toLowerCase() + ".stuffix_out", "-out.json");
 
 	private static final String INPUT = PropertiesUtils.get(MainTest.class.getName().toLowerCase() + ".in", null);
 
