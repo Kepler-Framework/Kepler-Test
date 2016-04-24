@@ -1,4 +1,5 @@
-* 作用：`尽可能`提供可测试的RPC接口，减少测试套件成本
+* 作用：
+	* `尽可能`提供可测试的RPC接口，减少测试成本
 <br></br>
 * 准备工作
 	* JDK依赖
@@ -61,15 +62,22 @@
 	```
 	* 执行测试
 		* cd kepler-test/modules/client
-		* mvn clean test -Dcom.kepler.test.maintest.path=[...]/modules/client/case/3/case
+		* mvn clean test -Dcom.kepler.test.maintest.in=[...]/modules/client/case/3/case
 			* 执行case.json对应测试`([...]需要替换为实际路径)`
+		* 服务响应将`（默认）`输出至[...]/modules/client/case/3/case-out.json
 	* 内置测试
 	`需启动kepler-test-demo/service`
-		* mvn clean test -Dcom.kepler.test.maintest.path=[...]/modules/client/case/1/case
+		* mvn clean test -Dcom.kepler.test.maintest.in=[...]/modules/client/case/1/case
 			* @See[<a href="https://github.com/Kepler-Framework/Kepler-Test/blob/master/modules/client/case/1/case.json">Case1</a>]
-		* mvn clean test -Dcom.kepler.test.maintest.path=[...]/modules/client/case/2/case
+		* mvn clean test -Dcom.kepler.test.maintest.in=[...]/modules/client/case/2/case
 			* @See[<a href="https://github.com/Kepler-Framework/Kepler-Test/blob/master/modules/client/case/2/case.json">Case2</a>]
-		* mvn clean test -Dcom.kepler.test.maintest.path=[...]/modules/client/case/3/case
+		* mvn clean test -Dcom.kepler.test.maintest.in=[...]/modules/client/case/3/case
 			* @See[<a href="https://github.com/Kepler-Framework/Kepler-Test/blob/master/modules/client/case/3/case.json">Case3</a>]
-		* mvn clean test -Dcom.kepler.test.maintest.path=[...]/modules/client/case/4/case
+		* mvn clean test -Dcom.kepler.test.maintest.in=[...]/modules/client/case/4/case
 			* @See[<a href="https://github.com/Kepler-Framework/Kepler-Test/blob/master/modules/client/case/4/case.json">Case4</a>]
+* 参数配置
+	+ 用例路径
+		+ com.kepler.test.MainTest.in
+		`String型。测试用请求服务部分(Json)的加载路径`  
+		@See[<a href="https://docs.spring.io/spring/docs/2.5.x/javadoc-api/org/springframework/util/ResourceUtils.html">加载路径的支持格式</a>]  
+`  
