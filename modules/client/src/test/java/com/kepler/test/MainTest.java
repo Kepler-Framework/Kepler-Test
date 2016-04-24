@@ -1,5 +1,6 @@
 package com.kepler.test;
 
+import java.io.FileOutputStream;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +23,7 @@ import com.kepler.header.HeadersContext;
 import com.kepler.header.HeadersProcessor;
 import com.kepler.id.IDGenerators;
 import com.kepler.invoker.Invoker;
+import com.kepler.org.apache.commons.io.IOUtils;
 import com.kepler.org.apache.commons.lang.reflect.MethodUtils;
 import com.kepler.protocol.RequestFactory;
 import com.kepler.protocol.RequestValidation;
@@ -44,9 +46,13 @@ public class MainTest {
 
 	private static final String DATE_FORAMT = PropertiesUtils.get(MainTest.class.getName().toLowerCase() + ".date_foramt", "yyyy-MM-dd HH:mm:ss");
 
-	private static final String STUFFIX = PropertiesUtils.get(MainTest.class.getName().toLowerCase() + ".stuffix", ".json");
+	private static final String IN_STUFFIX = PropertiesUtils.get(MainTest.class.getName().toLowerCase() + ".stuffix", ".json");
 
-	private static final String PATH = PropertiesUtils.get(MainTest.class.getName().toLowerCase() + ".path", null);
+	private static final String OUT_STUFFIX = PropertiesUtils.get(MainTest.class.getName().toLowerCase() + ".stuffix", "-out.json");
+
+	private static final String INPUT = PropertiesUtils.get(MainTest.class.getName().toLowerCase() + ".in", null);
+
+	private static final String OUTPUT = PropertiesUtils.get(MainTest.class.getName().toLowerCase() + ".out", MainTest.INPUT + MainTest.OUT_STUFFIX);
 
 	@Resource(name = "kepler.id")
 	private IDGenerators id;
@@ -82,8 +88,7 @@ public class MainTest {
 	 * @throws Exception
 	 */
 	private Case generate() throws Exception {
-		Case test = MainTest.MAPPER.readValue(ResourceUtils.getFile(MainTest.PATH + MainTest.STUFFIX), Case.class);
-		return test;
+		return MainTest.MAPPER.readValue(ResourceUtils.getFile(MainTest.INPUT + MainTest.IN_STUFFIX), Case.class);
 	}
 
 	/**
@@ -96,9 +101,22 @@ public class MainTest {
 	private List<Object> generate(Case test) throws Exception {
 		List<Object> args = new ArrayList<Object>();
 		for (Arg arg : test.getArgs()) {
-			args.add(MainTest.MAPPER.readValue(ResourceUtils.getFile(MainTest.PATH + "-" + arg.getName() + MainTest.STUFFIX), arg.getClazz()));
+			args.add(MainTest.MAPPER.readValue(ResourceUtils.getFile(MainTest.INPUT + "-" + arg.getName() + MainTest.IN_STUFFIX), arg.getClazz()));
 		}
 		return args;
+	}
+
+	/**
+	 * 输出结果
+	 * 
+	 * @param response
+	 * @throws Exception
+	 */
+	private void output(Object response) throws Exception {
+		MainTest.LOGGER.warn("Output path: " + MainTest.OUTPUT);
+		try (FileOutputStream output = new FileOutputStream(MainTest.OUTPUT)) {
+			IOUtils.write(MainTest.MAPPER.writeValueAsString(response), output);
+		}
 	}
 
 	@Before
@@ -111,7 +129,6 @@ public class MainTest {
 	public void test() throws Exception {
 		Case test = this.generate();
 		ImportedServiceFactory<?> imported = new ImportedServiceFactory(Class.forName(test.getService()), test.getProfile(), test.getVersion(), test.getProfile(), this.invoker, this.validation, this.request, this.headers, this.processor, this.id, this.profile, this.serials, this.imported);
-		Object response = MethodUtils.invokeMethod(imported.getObject(), test.getMethod(), this.generate(test).toArray(new Object[] {}));
-		MainTest.LOGGER.warn(MainTest.MAPPER.writeValueAsString(response));
+		this.output(MethodUtils.invokeMethod(imported.getObject(), test.getMethod(), this.generate(test).toArray(new Object[] {})));
 	}
 }
