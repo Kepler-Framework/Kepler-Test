@@ -77,7 +77,12 @@
 			* @See[<a href="https://github.com/Kepler-Framework/Kepler-Test/blob/master/modules/client/case/4/case.json">Case4</a>]
 * 参数配置
 	+ 用例路径
-		+ com.kepler.test.MainTest.in
+		+ com.kepler.test.MainTest.in   
 		`String型。测试用请求服务部分(Json)的加载路径`  
 		@See[<a href="https://docs.spring.io/spring/docs/2.5.x/javadoc-api/org/springframework/util/ResourceUtils.html">加载路径的支持格式</a>]  
-`  
+`  		+ com.kepler.test.MainTest.out    
+		`String型。测试用服务响应部分(Json)的输出加载路径。默认为com.kepler.test.MainTest.in同级目录`  
+		+ com.kepler.test.MainTest.stuffix_in     
+		`String型。com.kepler.test.MainTest.in加载路径对应文件后缀名。默认为.json`  
+		+ com.kepler.test.MainTest.stuffix_out       
+		`String型。com.kepler.test.MainTest.out加载路径对应文件后缀名。默认为-out.json`    
