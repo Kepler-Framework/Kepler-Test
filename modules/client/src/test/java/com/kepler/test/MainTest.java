@@ -129,6 +129,10 @@ public class MainTest {
 	public void test() throws Exception {
 		Case test = this.generate();
 		ImportedServiceFactory<?> imported = new ImportedServiceFactory(Class.forName(test.getService()), test.getProfile(), test.getVersion(), test.getProfile(), this.invoker, this.validation, this.request, this.headers, this.processor, this.id, this.profile, this.serials, this.imported);
-		this.output(MethodUtils.invokeMethod(imported.getObject(), test.getMethod(), this.generate(test).toArray(new Object[] {})));
+		try {
+			this.output(MethodUtils.invokeMethod(imported.getObject(), test.getMethod(), this.generate(test).toArray(new Object[] {})));
+		} catch (Throwable e) {
+			this.output(e.getCause());
+		}
 	}
 }
